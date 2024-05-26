@@ -42,11 +42,11 @@ function setImage() {
     let src;
     if (gerSelected) {
         randomNum = randomIntFromInterval(0, gerOptions.length-1);
-        src = `img/signals/german/${gerOptions[randomNum]}.gif`;
+        src = `https://aejae.github.io/Signalling-Training/img/signals/german/${gerOptions[randomNum]}.gif`;
         console.log(gerOptions[randomNum]);
     } else {
         randomNum = randomIntFromInterval(0, ausOptions.length-1);
-        src = `img/signals/austrian/${ausOptions[randomNum]}.gif`;
+        src = `https://aejae.github.io/Signalling-Training/img/signals/austrian/${ausOptions[randomNum]}.gif`;
         console.log(ausOptions[randomNum]);
     }
     signal.setAttribute("src", src);
