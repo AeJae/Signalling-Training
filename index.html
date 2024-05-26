@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Signalling Training</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="icon" type="image/png" href="img/pageIcon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="controller.js" defer></script>
+</head>
+<body>
+
+<nav>
+    <a href="https://aejae.github.io/"><img src="img/pageIcon.png" alt="logo"></a>
+    <h1>Signalling Training</h1>
+</nav>
+
+<div id="mainContainer">
+    <div id="trainingContainer">
+        <div id="regionSelector">
+            <div>
+                <p>German</p>
+                <div class="line" id="gerSelector"></div>
+            </div>
+            <div>
+                <p>Austrian</p>
+                <div class="line" id="ausSelector"></div>
+            </div>
+        </div>
+        <div id="test">
+            <img id="signal" src="" alt="Test Signal">
+        </div>
+        <label for="userInput" style="display: none; height: 0; visibility: hidden">Answer</label>
+        <input type="text" id="userInput" placeholder="Clear, Expect X, Stop">
+    </div>
+</div>
+
+<footer>
+    <p>AJSF Signalling Training</p>
+    <p>© 2024 Arun Fletcher</p>
+    <div class="mediaContainer">
+        <a href="https://github.com/AeJae" target="_blank"><img src="img/gh.png" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/arun-fletcher/" target="_blank"><img src="img/in.png" alt="LinkedIn"></a>
+    </div>
+</footer>
+
+</body>
+</html>

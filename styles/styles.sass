@@ -1,0 +1,72 @@
+// Variables
+@import "variables"
+
+
+// Global Styling
+*
+  font-family: "Noto Sans", sans-serif
+  margin: 0
+  padding: 0
+body
+  background-color: $background
+  color: $font-color
+
+
+// Main Page
+#mainContainer
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 760px
+
+#trainingContainer
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  width: 370px
+  height: 550px
+  border: 4px solid #2B588C
+  border-radius: 17px
+  background-color: white
+
+#regionSelector
+  margin-top: 25px
+  display: flex
+  align-items: center
+  color: black
+  width: 80%
+  //height: 40px
+  div
+    cursor: pointer
+    user-select: none
+    margin: 0 auto
+  .line
+    width: 45px
+    height: 2px
+    background-color: #2B588C
+#test
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 40%
+  height: 200px
+  border: 4px solid black
+  border-radius: 6px
+
+#userInput
+  margin: 0 auto 25px auto
+  padding: 5px 10px
+  border: 2px solid transparent
+  background-color: rgba(43, 88, 140, 0.2)
+  border-radius: 7px
+  text-align: center
+  outline: none
+  font-size: 15px
+  &::placeholder
+    color: rgba(0, 0, 0, 0.3)
+  &:focus
+    border-bottom: 2px solid #2B588C
+
+// Miscellaneous Styling
+@import "page-misc"
