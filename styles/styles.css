@@ -163,4 +163,10 @@ footer a p::before {
   background-clip: content-box;
 }
 
+@media screen and (max-width: 500px) {
+  nav h1 {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
