@@ -10,6 +10,7 @@ const inputBox = document.getElementById("userInput");
 const signal = document.getElementById("signal");
 let gerSelected = true;
 let currentSignal = "";
+let previousRandomNum = -1;
 
 ausSelectedLine.style.visibility = "hidden";
 
@@ -18,6 +19,15 @@ regions[1].addEventListener("click", austriaClicked);
 
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function nonRepeatedRandomInt(min, max) { // min and max included
+    let output;
+    while (true) {
+        output = randomIntFromInterval(min, max);
+        if (output !== previousRandomNum) { previousRandomNum = output; break; }
+    }
+    return output;
 }
 
 function germanyClicked() {
@@ -42,11 +52,11 @@ function setImage() {
     let randomNum;
     let src;
     if (gerSelected) {
-        randomNum = randomIntFromInterval(0, gerOptions.length-1);
+        randomNum = nonRepeatedRandomInt(0, gerOptions.length-1);
         src = `https://aejae.github.io/Signalling-Training/img/signals/german/${gerOptions[randomNum]}.gif`;
         currentSignal = gerOptions[randomNum];
     } else {
-        randomNum = randomIntFromInterval(0, ausOptions.length-1);
+        randomNum = nonRepeatedRandomInt(0, ausOptions.length-1);
         src = `https://aejae.github.io/Signalling-Training/img/signals/austrian/${ausOptions[randomNum]}.gif`;
         currentSignal = ausOptions[randomNum];
     }
