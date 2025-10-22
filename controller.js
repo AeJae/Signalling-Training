@@ -1,6 +1,6 @@
 document.querySelector("footer").style.backgroundImage = "url(\"/img/60-lines.png\")"; // Doesn't work in CSS
 
-const gerOptions = ["repeater_expect_clear", "40_expect_clear", "ks_clear", "ks_clear_restricted", "ks_expect_stop", "ks_stop", "clear", "100_expect_stop", "100_expect_40_or_60", "100_expect_100", "100_expect_clear", "clear_100", "clear_60", "clear_40", "stop", "expect_clear", "expect_100", "expect_40_or_60", "expect_stop", "main", "distant", "repeater"]
+const gerOptions = ["repeater_expect_clear", "40_expect_stop", "40_expect_40_or_60", "40_expect_100", "40_expect_clear", "60_expect_stop", "60_expect_40_or_60", "60_expect_100", "60_expect_clear", "ks_clear", "ks_clear_restricted", "ks_expect_stop", "ks_stop", "clear", "100_expect_stop", "100_expect_40_or_60", "100_expect_100", "100_expect_clear", "clear_100", "clear_60", "clear_40", "stop", "expect_clear", "expect_100", "expect_40_or_60", "expect_stop", "main", "distant", "repeater"]
 const ausOptions = ["clear", "clear_60", "clear_40", "stop", "expect_clear", "expect_60", "expect_40", "expect_stop", "shunt_clear", "shunt_admitted", "shunt_stop", "repeater_clear", "repeater_restricted", "repeater_stop", "repeater_stop_ack"]
 
 const regions = document.getElementById("regionSelector").children;
