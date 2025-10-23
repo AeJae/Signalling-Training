@@ -1,6 +1,6 @@
 document.querySelector("footer").style.backgroundImage = "url(\"/img/60-lines.png\")"; // Doesn't work in CSS
 
-const gerOptions = ["repeater_expect_clear", "40_expect_stop", "40_expect_40_or_60", "40_expect_100", "40_expect_clear", "60_expect_stop", "60_expect_40_or_60", "60_expect_100", "60_expect_clear", "ks_clear", "ks_clear_restricted", "ks_expect_stop", "ks_stop", "clear_expect_stop","clear_expect_40_or_60", "clear_expect_100", "clear_expect_clear", "clear", "100_expect_stop", "100_expect_40_or_60", "100_expect_100", "100_expect_clear", "clear_100", "clear_60", "clear_40", "stop", "expect_clear", "expect_100", "expect_40_or_60", "expect_stop", "main", "distant", "repeater"]
+const gerOptions = ["hp_expect_stop", "hp_expect_40_or_indicated", "hp_expect_clear_reduced_distance", "hp_expect_clear", "hp_stop", "hp_dup_stop", "hp_shunt_admitted", "hp_clear_40_or_indicated", "hp_clear", "repeater_expect_clear", "40_expect_stop", "40_expect_40_or_60", "40_expect_100", "40_expect_clear", "60_expect_stop", "60_expect_40_or_60", "60_expect_100", "60_expect_clear", "ks_clear", "ks_clear_restricted", "ks_expect_stop", "ks_stop", "clear_expect_stop","clear_expect_40_or_60", "clear_expect_100", "clear_expect_clear", "clear", "100_expect_stop", "100_expect_40_or_60", "100_expect_100", "100_expect_clear", "clear_100", "clear_60", "clear_40", "stop", "expect_clear", "expect_100", "expect_40_or_60", "expect_stop", "main", "distant", "repeater"]
 const ausOptions = ["clear", "clear_60", "clear_40", "stop", "expect_clear", "expect_60", "expect_40", "expect_stop", "shunt_clear", "shunt_admitted", "shunt_stop", "repeater_clear", "repeater_restricted", "repeater_stop", "repeater_stop_ack"]
 
 const regions = document.getElementById("regionSelector").children;
@@ -69,9 +69,9 @@ function userInput(e) {
         const userAnswer = inputBox.value.trim().toLowerCase();
         if (userAnswer !== "") {
             let answer = currentSignal.split("_");
-            if (answer[0] === "ks") {
-                delete answer[0];
-            }
+            if (answer[0] === "ks" || answer[0] === "hp") { delete answer[0]; } // Remove system specifier
+            if (answer[1] === "dup") { delete answer[1]; } // For same system signals with the same answer
+
             answer = answer.join(" ").trim().toLowerCase();
             if (userAnswer === answer) {
                 console.log("Correct");
