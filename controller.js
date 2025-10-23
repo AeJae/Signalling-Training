@@ -8,9 +8,11 @@ const gerSelectedLine = document.getElementById("gerSelector");
 const ausSelectedLine = document.getElementById("ausSelector");
 const inputBox = document.getElementById("userInput");
 const signal = document.getElementById("signal");
+const systemDisplay = document.getElementById("system");
 let gerSelected = true;
 let currentSignal = "";
 let previousRandomNum = -1;
+let currentSystem = "";
 
 ausSelectedLine.style.visibility = "hidden";
 
@@ -55,12 +57,16 @@ function setImage() {
         randomNum = nonRepeatedRandomInt(0, gerOptions.length-1);
         src = `https://aejae.github.io/Signalling-Training/img/signals/german/${gerOptions[randomNum]}.gif`;
         currentSignal = gerOptions[randomNum];
+        let first = gerOptions[randomNum].split("_")[0];
+        currentSystem = first === "hp" ? "H/V" : first === "ks" ? "Ks" : "Hl";
     } else {
         randomNum = nonRepeatedRandomInt(0, ausOptions.length-1);
         src = `https://aejae.github.io/Signalling-Training/img/signals/austrian/${ausOptions[randomNum]}.gif`;
         currentSignal = ausOptions[randomNum];
+        currentSystem = "ÖBB";
     }
     signal.setAttribute("src", src);
+    systemDisplay.innerText = `System: ${currentSystem}`;
 }
 
 function userInput(e) {
@@ -69,8 +75,10 @@ function userInput(e) {
         const userAnswer = inputBox.value.trim().toLowerCase();
         if (userAnswer !== "") {
             let answer = currentSignal.split("_");
-            if (answer[0] === "ks" || answer[0] === "hp") { delete answer[0]; } // Remove system specifier
-            if (answer[1] === "dup") { delete answer[1]; } // For same system signals with the same answer
+            // Remove system specifier
+            if (answer[0] === "ks" || answer[0] === "hp") { delete answer[0]; }
+            // Remove duplicate tag
+            if (answer[1] === "dup") { delete answer[1]; }
 
             answer = answer.join(" ").trim().toLowerCase();
             if (userAnswer === answer) {
