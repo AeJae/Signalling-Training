@@ -11,6 +11,7 @@ body {
 
 #mainContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: calc(100svh - 70px);
@@ -76,10 +77,18 @@ body {
 }
 
 #system {
+  user-select: none;
   color: gray;
   text-align: center;
   font-size: 0.9em;
   margin-bottom: 15px;
+}
+
+#disclaimer {
+  user-select: none;
+  margin-top: 15px;
+  color: #001133;
+  font-size: 0.8em;
 }
 
 nav {
